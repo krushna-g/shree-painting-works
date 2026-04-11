@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="mr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHREE PAINTING WORKS | Shreekant Warpe</title>
+
+    <!-- Premium Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <style>
+        :root {
+            --primary: #ed1c24;
+            --navy: #002e5b;
+            --whatsapp: #25D366;
+            --insta: #E1306C;
+            --fb: #1877F2;
+            --gold: #FFD700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #ffffff;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-area img {
+            height: 50px;
+            margin-right: 12px;
+        }
+
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 900;
+            color: var(--navy);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 28px;
+            height: 22px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background: var(--navy);
+            border-radius: 2px;
+        }
+
+        .nav-links.active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #fff;
+            padding: 20px 8%;
+            gap: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            z-index: 1001;
+        }
+
+        .nav-links.active a {
+            font-size: 16px;
+            padding: 10px 0;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 1.5rem;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.14)), url('hero.png') center/cover no-repeat;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            width: 100%;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(3rem, 6vw, 5.2rem);
+            font-weight: 900;
+            line-height: 1.02;
+            color: #ffffff;
+            text-shadow: 0 6px 35px rgba(0, 0, 0, 0.45);
+        }
+
+        .hero-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            margin-top: 24px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.92);
+            letter-spacing: 0.04em;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: clamp(2.2rem, 10vw, 3.6rem);
+            }
+
+            .hero-name {
+                font-size: 1.05rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: clamp(2rem, 9vw, 3.5rem);
+            }
+
+            .hero p {
+                font-size: 1.4rem;
+            }
+
+            .hero-profile-img {
+                width: 140px;
+                height: 140px;
+            }
+        }
+
+        /* PREMIUM SERVICES SECTION */
+        .section {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 50px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: #f9f9f9;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--navy);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            background: #fff;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card i {
+            font-size: 50px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+
+        /* WHY BEST SERVICE CONTENT */
+        .why-best-box {
+            background: var(--navy);
+            color: white;
+            padding: 70px 10%;
+            border-radius: 40px;
+            margin: 40px 8%;
+            text-align: center;
+        }
+
+        .why-best-box p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        /* GALLERY (20 Photos + 8 Videos) */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .media-item {
+            border-radius: 15px;
+            overflow: hidden;
+            height: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background: #eee;
+        }
+
+        .media-item img,
+        .media-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* CONTACT & SOCIAL */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            padding: 80px 8%;
+            background: #f8fafc;
+        }
+
+        .info-side h3 {
+            font-size: 2.2rem;
+            color: var(--navy);
+            margin-bottom: 25px;
+        }
+
+        .info-side p {
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .info-side i {
+            color: var(--primary);
+            margin-right: 12px;
+        }
+
+        .social-links {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-link {
+            text-decoration: none;
+            font-size: 35px;
+            transition: 0.3s;
+        }
+
+        .social-link.insta {
+            color: var(--insta);
+        }
+
+        .social-link.fb {
+            color: var(--fb);
+        }
+
+        .form-side input,
+        .form-side textarea {
+            width: 100%;
+            padding: 18px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .btn-submit {
+            background: var(--navy);
+            color: white;
+            width: 100%;
+            padding: 20px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 800;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        /* WHATSAPP FIXED */
+        .wa-chat {
+            position: fixed;
+            bottom: 35px;
+            right: 35px;
+            background: var(--whatsapp);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            font-weight: 800;
+            z-index: 2000;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 992px) {
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .logo-area {
+                gap: 12px;
+            }
+
+            nav {
+                padding: 15px 4%;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                height: 75vh;
+                padding: 40px 8px;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section {
+                padding: 70px 4%;
+            }
+
+            .why-best-box {
+                padding: 50px 4%;
+                margin: 30px 4%;
+            }
+
+            .contact-container {
+                padding: 50px 4%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#home" class="logo-area">
+            <img src="logo.png" alt="SHREE Logo">
+            <div class="logo-text">SHREE <span>PAINTING WORK'S</span></div>
+        </a>
+        <button class="mobile-menu-btn" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="tel:7057201268"
+            style="background:var(--primary); color:white; padding:12px 25px; text-decoration:none; border-radius:8px; font: weight 400px;;">Call now</a>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Coloring Your Dreams <br> With Perfection</h1>
+            <p class="hero-name">Shreekant  Warpe Sir</p>
+        </div>
+    </section>
+
+    <!-- PREMIUM SERVICES -->
+    <section class="section" id="services">
+        <h2 class="section-title">Premium Painting Services</h2>
+        <div class="services-grid">
+            <div class="service-card"><i class="fas fa-home"></i>
+                <h3>Residential Painting</h3>
+                <p>तुमच्या घरासाठी रॉयल आणि प्रीमियम लूक.</p>
+            </div>
+            <div class="service-card"><i class="fas fa-building"></i>
+                <h3>Commercial Work</h3>
+                <p>ऑफिस आणि मोठ्या इमारतींचे प्रोफेशनल काम.</p>
+            </div>
+            <div class="service-card"><i class="fas fa-tint-slash"></i>
+                <h3>Waterproofing</h3>
+                <p>भिंतींच्या गळतीवर कायमस्वरूपी उपाय.</p>
+            </div>
+            <div class="service-card"><i class="fas fa-magic"></i>
+                <h3>Texture Design</h3>
+                <p>आकर्षक आणि नवीन वॉल डिझाइन्स.</p>
+            </div>
+            <div class="service-card"><i class="fas fa-magic"></i>
+                <h3>Texture Design</h3>
+                <p>आकर्षक आणि नवीन वॉल डिझाइन्स.</p>
+            </div>
+
+            <div class="service-card"><i class="fas fa-magic"></i>
+                <h3>Texture Design</h3>
+                <p>आकर्षक आणि नवीन वॉल डिझाइन्स.</p>
+            </div>
+                <div class="service-card"><i class="fas fa-magic"></i>
+                    <h3>Texture Design</h3>
+                    <p>आकर्षक आणि नवीन वॉल डिझाइन्स.</p>   
+        </div>
+    </section>
+
+    <!-- WHY BEST SERVICE -->
+    <section class="why-best-box">
+        <h2 style="font-size: 2.2rem; margin-bottom: 25px;">Why Shree Painting Works is the Best Service in Pune</h2>
+        <p>Shree Painting Works stands as the premier destination for luxury home painting in Pune. Led by Shreekant
+            Warpe, we combine 10+ years of expertise with authentic Asian Paints products. Our dedication to surgical
+            precision, transparent pricing, and timely delivery ensures a masterpiece finish for every client.</p>
+    </section>
+
+    <!-- GALLERY (20 Photos + 8 Videos) -->
+    <section id="gallery" style="background:#f9f9f9; padding: 80px 8%;">
+        <h2 class="section-title">Work Gallery</h2>
+        <div class="gallery-grid">
+            <script>
+                for (let i = 1; i <= 20; i++) {
+                    document.write(`<div class="media-item"><img src="work${i}.jpg" alt="Work ${i}"></div>`);
+                }
+                for (let v = 1; v <= 8; v++) {
+                    document.write(`<div class="media-item"><video src="video${v}.mp4" controls></video></div>`);
+                }
+            </script>
+        </div>
+    </section>
+
+    <!-- CONTACT & SOCIAL -->
+    <section class="contact-container" id="contact">
+        <div class="info-side">
+            <h3>Contact Information</h3>
+            <p><i class="fas fa-user"></i> <strong>Name:</strong> Shreekant Warpe</p>
+            <p><i class="fas fa-phone-alt"></i> <strong>Phone:</strong> 7057201268</p>
+            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> shreekantwarpe821@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Ravet, Punavale, Pune</p>
+
+            <div class="social-links">
+                <a href="https://instagram.com" target="_blank" class="social-link insta"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank" class="social-link fb"><i
+                        class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+        <div class="form-side">
+            <form id="final-form">
+                <input type="text" id="uname" name="from_name" placeholder="तुमचे नाव" required>
+                <input type="tel" id="uphone" name="user_phone" placeholder="मोबाईल नंबर" required>
+                <textarea id="umsg" name="message" rows="5" placeholder="तुमचा पत्ता आणि संदेश..." required></textarea>
+                <button type="submit" id="submitBtn" class="btn-submit">Submit & Chat on WhatsApp</button>
+            </form>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; background: #222; color: #fff;">
+        &copy; 2026 SHREE PAINTING WORKS | Managed by Shreekant Warpe
+    </footer>
+
+    <!-- WHATSAPP FLOATING: Fixed Direct Link -->
+    <a href="https://wa.me/917057201268?text=Hello%20Shree%20Painting%20Works" class="wa-chat" target="_blank">
+        <i class="fab fa-whatsapp" style="font-size:28px;"></i>
+        <span>Chat with Us</span>
+    </a>
+
+    <script>
+        if (typeof emailjs !== 'undefined' && emailjs.init) {
+            emailjs.init("YOUR_PUBLIC_KEY");
+        }
+
+        const menuButton = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        if (menuButton && navLinks) {
+            menuButton.addEventListener('click', function () {
+                navLinks.classList.toggle('active');
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function () {
+                    navLinks.classList.remove('active');
+                });
+            });
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function () {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        document.getElementById('final-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            const name = document.getElementById('uname').value;
+            const phone = document.getElementById('uphone').value;
+            const msg = document.getElementById('umsg').value;
+
+            btn.innerText = 'Sending Details...';
+
+            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this).then(function () {
+                const waLink = `https://wa.me/917057201268?text=नवीन%20चौकशी%20आली%20आहे:%0A*नाव:*%20${encodeURIComponent(name)}%0A*फोन:*%20${encodeURIComponent(phone)}%0A*मेसेज:*%20${encodeURIComponent(msg)}`;
+                window.open(waLink, '_blank');
+                alert('माहिती पाठवली आहे!');
+                document.getElementById('final-form').reset();
+                btn.innerText = 'Submit Success';
+            }, function () { alert('त्रुटी आली, कृपया कॉल करा!'); btn.innerText = 'Submit Inquiry'; });
+        });
+    </script>
+</body>
+
+</html>
