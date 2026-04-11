@@ -338,6 +338,27 @@
         }
 
         /* WHATSAPP FIXED */
+        .call-now {
+            position: fixed;
+            bottom: 110px;
+            right: 35px;
+            background: var(--primary);
+            color: white;
+            padding: 15px 28px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            font-weight: 800;
+            z-index: 2000;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .call-now:hover {
+            transform: translateY(-2px);
+        }
+
         .wa-chat {
             position: fixed;
             bottom: 35px;
@@ -423,8 +444,7 @@
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <a href="tel:7057201268"
-            style="background:var(--primary); color:white; padding:12px 25px; text-decoration:none; border-radius:8px; font: weight 400px;;">Call now</a>
+       
     </nav>
 
     <!-- HERO SECTION -->
@@ -522,6 +542,12 @@
     <footer style="text-align: center; padding: 40px; background: #222; color: #fff;">
         &copy; 2026 SHREE PAINTING WORKS | Managed by Shreekant Warpe
     </footer>
+
+    <!-- CALL NOW FLOATING BUTTON -->
+    <a href="tel:+917057201268" class="call-now">
+        <i class="fas fa-phone-alt" style="font-size:22px;"></i>
+        <span>Call Now</span>
+    </a>
 
     <!-- WHATSAPP FLOATING: Fixed Direct Link -->
     <a href="https://wa.me/917057201268?text=Hello%20Shree%20Painting%20Works" class="wa-chat" target="_blank">
