@@ -87,5 +87,4 @@ function safeQuerySelectorAll(selector) {
         console.warn(`Elements not found: ${selector}`);
         return [];
     }
-}</content>
-<parameter name="filePath">c:\Users\HP\OneDrive\Documents\GitHub\shree-painting-works\public\index.js
+}
