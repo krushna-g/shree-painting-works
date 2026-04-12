@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="mr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry | SHREE PAINTING WORKS</title>
+
+    <!-- Premium Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html" class="logo-area">
+            <img src="logo.png" alt="SHREE Logo">
+            <div class="logo-text">SHREE <span>PAINTING WORK'S</span></div>
+        </a>
+        <button class="mobile-menu-btn" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-icon nav-home">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="#ed1c24"/>
+                    <path d="M16 8l-1-1V4l2 0v3l1 1z" fill="#FFD700" opacity="0.8"/>
+                </svg>
+                <span>Home</span>
+            </a></li>
+            <li><a href="services.html" class="nav-icon nav-services">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                    <!-- Paint roller -->
+                    <rect x="8" y="2" width="8" height="12" rx="2" fill="#1877F2"/>
+                    <!-- Paint bucket -->
+                    <path d="M4 14h16v6c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2v-6z" fill="#9c27b0"/>
+                    <!-- Paint splash -->
+                    <circle cx="18" cy="8" r="2" fill="#ed1c24"/>
+                    <circle cx="16" cy="6" r="1.5" fill="#FFD700"/>
+                    <circle cx="20" cy="6" r="1.5" fill="#25D366"/>
+                </svg>
+                <span>Services</span>
+            </a></li>
+            <li><a href="gallery.html" class="nav-icon nav-gallery">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                    <!-- Camera body -->
+                    <rect x="4" y="5" width="16" height="14" rx="2" fill="none" stroke="#9c27b0" stroke-width="1.5"/>
+                    <!-- Camera lens -->
+                    <circle cx="12" cy="12" r="4" fill="none" stroke="#1877F2" stroke-width="1.5"/>
+                    <!-- Camera flash -->
+                    <rect x="17" y="5" width="3" height="3" fill="#FFD700" rx="0.5"/>
+                    <!-- Photo lines -->
+                    <line x1="6" y1="15" x2="10" y2="11" stroke="#25D366" stroke-width="1" stroke-linecap="round"/>
+                    <line x1="14" y1="19" x2="18" y2="15" stroke="#ed1c24" stroke-width="1" stroke-linecap="round"/>
+                </svg>
+                <span>Gallery</span>
+            </a></li>
+            <li><a href="contact.html" class="nav-contact">
+                <span>Enquiry</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <div>
+            <h1>Enquiry Page</h1>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-container">
+        <div class="info-side">
+            <h3>Contact Information</h3>
+            <p><i class="fas fa-user"></i> <strong>Name:</strong> Shreekant Warpe</p>
+            <p><i class="fas fa-phone-alt"></i> <strong>Phone:</strong> 7057201268</p>
+            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> shreekantwarpe821@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Ravet, Punavale, Pune</p>
+
+          
+           
+            
+        </div>
+
+        <div class="form-side">
+            <h3>Send us a Message</h3>
+            <form id="final-form">
+                <input type="text" id="uname" name="from_name" placeholder="तुमचे नाव" required>
+                <input type="tel" id="uphone" name="user_phone" placeholder="मोबाईल नंबर" required>
+                <textarea id="umsg" name="message" rows="5" placeholder="तुमचा पत्ता आणि संदेश..." required></textarea>
+                <button type="submit" id="submitBtn" class="btn-submit">Submit & Chat on WhatsApp</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="follow-contact-section">
+            <h3>Follow Us & Contact</h3>
+            <div class="contact-buttons-row">
+                <a href="https://facebook.com" target="_blank" class="contact-button btn-facebook" title="Follow on Facebook">
+                    <i class="fab fa-facebook"></i>
+                    <span>Facebook</span>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="contact-button btn-instagram" title="Follow on Instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://wa.me" target="_blank" class="contact-button btn-whatsapp" title="Chat on WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="tel:7057201268" class="contact-button btn-call" title="Call Now">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Call Now</span>
+                </a>
+                <a href="mailto:shreekantwarpe821@gmail.com" class="contact-button btn-email" title="Send Email">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
+                </a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            &copy; 2026 SHREE PAINTING WORKS | Managed by Shreekant Warpe
+        </div>
+    </footer>
+
+    <!-- No floating buttons on contact page - buttons integrated in the form -->
+
+
+</body>
+
+</html>
