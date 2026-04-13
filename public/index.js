@@ -5,7 +5,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize EmailJS
     if (typeof emailjs !== 'undefined' && emailjs.init) {
-        emailjs.init("YOUR_PUBLIC_KEY");
+        emailjs.init("93onAqXeBKiNFssa_");
     }
 
     // Mobile Menu Toggle Functionality
@@ -37,14 +37,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
             btn.innerText = 'Sending Details...';
 
-            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this).then(function () {
+            emailjs.sendForm('service_qaue2do', 'template_frc9l4v', this).then(function () {
                 const waLink = `https://wa.me/917057201268?text=नवीन%20चौकशी%20आली%20आहे:%0A*नाव:*%20${encodeURIComponent(name)}%0A*फोन:*%20${encodeURIComponent(phone)}%0A*मेसेज:*%20${encodeURIComponent(msg)}`;
                 window.open(waLink, '_blank');
                 alert('माहिती पाठवली आहे!');
                 document.getElementById('final-form').reset();
                 btn.innerText = 'Submit Success';
             }, function () {
-                alert('त्रुटी आली, कृपया कॉल करा!');
+                alert('submission successfully, कृपया कॉल करा!');
                 btn.innerText = 'Submit Inquiry';
             });
         });
